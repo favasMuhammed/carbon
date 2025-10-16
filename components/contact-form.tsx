@@ -2,6 +2,7 @@
 
 import type React from "react";
 import { useState } from "react";
+import Image from "next/image";
 import { toast } from "../hooks/use-toasts";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
 import { useLowCarbon } from "@/context/low-carbon-context";
@@ -146,9 +147,11 @@ export default function ContactForm() {
         {/* Left side - Solar panel image */}
         <div className="w-full md:w-1/2 relative">
           {!isLowCarbon ? (
-            <img
+            <Image
               src="/images/contact-us-banner.png"
               alt="Solar panels"
+              width={444}
+              height={433}
               className="w-full h-64 md:h-full object-cover bg-blue-800"
             />
           ) : (

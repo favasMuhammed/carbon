@@ -2,6 +2,7 @@
 
 import { useLowCarbon } from "@/context/low-carbon-context";
 import Link from "next/link";
+import Image from "next/image";
 import LogoCarousel from "./logo-carousel";
 
 export function OurStory() {
@@ -42,11 +43,11 @@ export function OurStory() {
               </Link>
             </div>
             {!isLowCarbon ? (
-              <img
+              <Image
                 src="/images/our-story.png"
                 alt="Our Story"
-                height={433}
                 width={444}
+                height={433}
                 className="object-cover"
               />
             ) : (

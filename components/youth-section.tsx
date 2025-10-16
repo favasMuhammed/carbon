@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import Image from "next/image";
 import { useLowCarbon } from "@/context/low-carbon-context";
 
 export function YouthSection() {
@@ -18,7 +19,7 @@ export function YouthSection() {
   const [organizationError, setOrganizationError] = useState("");
   const [contactError, setContactError] = useState("");
 
-  const texts = ["Shape the Youth!", "Upcycle Workshop"];
+  const texts = useMemo(() => ["Shape the Youth!", "Upcycle Workshop"], []);
   const [currentText, setCurrentText] = useState(texts[0]);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export function YouthSection() {
       setCurrentText((prev) => (prev === texts[0] ? texts[1] : texts[0]));
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [texts]);
 
   useEffect(() => {
     setGoogleScriptUrl(process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL || "");
@@ -124,9 +125,11 @@ export function YouthSection() {
               </p>
             </div>
             {!isLowCarbon ? (
-              <img
+              <Image
                 src="/images/youth-new.png"
                 alt="Students"
+                width={444}
+                height={473}
                 className="w-full h-full object-cover"
               />
             ) : (

@@ -67,7 +67,7 @@ export default function PublicBenchesPage() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [public_benches]);
+  }, []);
 
   const handleColorSelect = (productId: number, color: string) => {
     setSelectedColors((prev) => ({

@@ -12,6 +12,7 @@ const gtm = process.env.NEXT_PUBLIC_APP_GTM;
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://carbonandwhale.com'),
   title:
     "Carbon & Whale | Sustainable Furniture & Interlocks from Recycled Plastic",
   description:

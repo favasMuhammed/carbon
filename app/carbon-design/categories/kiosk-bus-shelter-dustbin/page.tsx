@@ -58,7 +58,7 @@ export default function KioskPage() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [kiosk_bus_dustin]);
+  }, []);
 
   const handleColorSelect = (productId: number, color: string) => {
     setSelectedColors((prev) => ({

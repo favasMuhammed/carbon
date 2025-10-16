@@ -51,9 +51,9 @@ export function CarbonAds() {
                   <Image
                     src={item.imageSrc || "/placeholder.svg"}
                     alt={item.title}
-                    layout="fill"
-                    objectFit="contain"
-                    className="rounded-lg"
+                    width={128}
+                    height={128}
+                    className="rounded-lg object-contain"
                   />
                 </div>
                 <CardTitle className="text-[18px]">{item.title}</CardTitle>
